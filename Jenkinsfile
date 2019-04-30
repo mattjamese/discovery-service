@@ -3,7 +3,7 @@ node {
     withMaven(maven:'maven') {
 
         stage('Checkout') {
-            git url: 'git@github.com:saurabh0010/sample-spring-microservices.git', CredentialsID: 'github', branch: 'master'
+            git url: 'https://github.com/mattjamese/discovery-service.git', CredentialsID: 'mattjamese', branch: 'master'
         }
 
         stage('Build') {
@@ -15,10 +15,10 @@ node {
         }
 
         stage('Image') {
-            dir ('discovery-service') {
+            //dir ('discovery-service') {
                 def app = docker.build "localhost:5000/discovery-service:${env.version}"
                 app.push()
-            }
+            //}
         }
 
         stage ('Run') {
