@@ -22,7 +22,7 @@ node {
         }
 
         stage ('Run') {
-            docker.image("/discovery-service:${env.version}").run('-p 8761:8761 -h discovery --name discovery --restart=always ')
+            docker.image("/discovery-service:${env.version}").run('-p 8761:8761 --name discovery --restart=always ')
         }
 
         stage ('Final') {
