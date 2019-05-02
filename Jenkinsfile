@@ -18,7 +18,6 @@ node {
         stage('RemoveOldContainers'){	    
     	    script {
 				  try {
-				      //sh 'docker rm -f "localhost:5000/discovery-service:${env.version}"'	
 				      sh 'docker rm -f discovery'
 				  } catch (Exception e) {
 				     
