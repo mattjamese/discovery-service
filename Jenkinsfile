@@ -21,6 +21,7 @@ node {
 				      sh 'docker rm -f "localhost:5000/discovery-service:${env.version}"'	
 				  } catch (Exception e) {
 				      sh 'No container exception!'
+				      build job: 'Image'
 				  }
 			}				     
 		}
