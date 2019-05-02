@@ -15,16 +15,14 @@ node {
         }
         
         
-        stage('Remove Old Containers'){	  
-	    steps {
-	    	    script {
-					  try {
-					      sh 'docker rm -f "localhost:5000/discovery-service:${env.version}"'	
-					  } catch (Exception e) {
-					      sh 'No container exception!'
-					  }
-					}	
-				}	     
+        stage('Remove Old Containers'){	    
+    	    script {
+				  try {
+				      sh 'docker rm -f "localhost:5000/discovery-service:${env.version}"'	
+				  } catch (Exception e) {
+				      sh 'No container exception!'
+				  }
+			}				     
 		}
 
         stage('Image') {
