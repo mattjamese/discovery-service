@@ -15,7 +15,7 @@ node {
         }
         
         
-        stage('Remove Old Containers'){	    
+        /*stage('Remove Old Containers'){	    
     	    script {
 				  try {
 				      sh 'docker rm -f "localhost:5000/discovery-service:${env.version}"'	
@@ -24,7 +24,7 @@ node {
 				      build job: 'Image'
 				  }
 			}				     
-		}
+		}*/
 
         stage('Image') {
             //dir ('discovery-service') {
